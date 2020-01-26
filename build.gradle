@@ -9,8 +9,10 @@ allprojects {
     targetCompatibility = 1.8
 
     dependencies {
-        compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
+        compile group: 'org.hibernate', name: 'hibernate-core', version: hibernateVersion
+        compile group: 'org.hibernate', name: 'hibernate-c3p0', version: hibernateVersion
         compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
+        compile group: 'com.h2database', name: 'h2', version: '1.4.200'
     }
 
     test {
