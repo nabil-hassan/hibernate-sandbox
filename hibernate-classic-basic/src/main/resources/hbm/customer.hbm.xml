@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+        PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping">
+<hibernate-mapping>
+    <class name="net.nh.domain.Customer" table="CUSTOMER">
+        <id name="id" column="ID" type="long">
+            <generator class="native"/>
+        </id>
+        <version name="version" column="VERSION"/>
+        <property name="forename" column="FORENAME" type="string"/>
+        <property name="surname"  column="SURNAME"   type="string"/>
+    </class>
+</hibernate-mapping>

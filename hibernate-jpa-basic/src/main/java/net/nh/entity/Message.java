@@ -20,7 +20,6 @@ public class Message {
 
     private String text;
 
-    private Message nextMessage;
 
     public Long getId() {
         return id;
@@ -35,13 +34,5 @@ public class Message {
         this.text = text;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "next_message_id")
-    public Message getNextMessage() {
-        return nextMessage;
-    }
 
-    public void setNextMessage(Message nextMessage) {
-        this.nextMessage = nextMessage;
-    }
 }
