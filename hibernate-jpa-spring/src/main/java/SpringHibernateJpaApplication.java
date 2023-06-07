@@ -19,8 +19,8 @@ public class SpringHibernateJpaApplication {
         item.setCode("FA0001");
         item.setDescription("Full armor");
 
-        ItemDao dao = context.getBean(ItemDao.class);
-        dao.persist(item);
+        ItemDao itemDao = context.getBean(ItemDao.class);
+        itemDao.persist(item);
         LOG.info("Persisted item: {}", item);
     }
 }

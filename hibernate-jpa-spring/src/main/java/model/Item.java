@@ -1,22 +1,26 @@
 package model;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.util.UUID;
 
 @Entity
 @Table(name = "items")
 public class Item {
+
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(generator = "UUID")
+    private UUID id;
     private String code;
     private String description;
-
-    public Long getId() {
-        return id;
-    }
 
     public String getCode() {
         return code;
@@ -32,6 +36,14 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     @Override
